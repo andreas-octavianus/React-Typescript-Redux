@@ -1,18 +1,13 @@
 import * as React from 'react';
 import './App.css';
 
-import Hello from './containers/Hello';
-import {createStore} from 'redux';
-import {enthusiasm} from './reducers/index';
-import {StoreState} from './types/index';
 import {Provider} from 'react-redux';
+import {store} from './store';
+
+import Hello from './module/enthusiasm/container/Hello';
+import TodoPage from './module/todo/component';
 
 const logo = require('./logo.svg');
-
-const store = createStore<StoreState>(enthusiasm, {
-    enthusiasmLevel: 1,
-    languageName: 'TypeScript'
-});
 
 class App extends React.Component<{}, {}> {
     render() {
@@ -25,8 +20,9 @@ class App extends React.Component<{}, {}> {
                     </div>
                     <p className="App-intro">
                         To get started, edit <code>src/App.tsx</code> and save to reload.
-                        <Hello />
                     </p>
+                    <Hello/>
+                    <TodoPage/>
                 </div>
             </Provider>
         );
