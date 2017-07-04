@@ -1,10 +1,10 @@
 import * as React from 'react';
 import './App.css';
 
-import Hello from './module/enthusiasm/containers/Hello';
+import Hello from './module/enthusiasm/container/Hello';
 import {createStore} from 'redux';
-import {enthusiasm} from './module/enthusiasm/reducers/index';
-import {StoreState} from './module/enthusiasm/types/index';
+import {enthusiasm} from './module/enthusiasm/reducer/index';
+import {StoreState} from './module/enthusiasm/type/index';
 import {Provider} from 'react-redux';
 
 const logo = require('./logo.svg');
