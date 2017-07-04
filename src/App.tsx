@@ -2,17 +2,10 @@ import * as React from 'react';
 import './App.css';
 
 import Hello from './module/enthusiasm/container/Hello';
-import {createStore} from 'redux';
-import {enthusiasm} from './module/enthusiasm/reducer/index';
-import {StoreState} from './module/enthusiasm/type/index';
 import {Provider} from 'react-redux';
+import {store} from './store';
 
 const logo = require('./logo.svg');
-
-const store = createStore<StoreState>(enthusiasm, {
-    enthusiasmLevel: 1,
-    languageName: 'TypeScript'
-});
 
 class App extends React.Component<{}, {}> {
     render() {
