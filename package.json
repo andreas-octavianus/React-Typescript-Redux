@@ -8,10 +8,12 @@
     "@types/react": "^15.0.33",
     "@types/react-dom": "^15.5.1",
     "@types/react-redux": "^4.4.45",
+    "@types/redux-form": "^6.6.6",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
-    "redux": "^3.7.1"
+    "redux": "^3.7.1",
+    "redux-form": "^6.8.0"
   },
   "devDependencies": {
     "react-scripts-ts": "2.3.2"
