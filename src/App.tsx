@@ -6,6 +6,7 @@ import {store} from './store';
 
 import Hello from './module/enthusiasm/container/Hello';
 import TodoPage from './module/todo/component';
+import {IdentityPage} from './module/identity';
 
 const logo = require('./logo.svg');
 
@@ -23,6 +24,7 @@ class App extends React.Component<{}, {}> {
                     </p>
                     <Hello/>
                     <TodoPage/>
+                    <IdentityPage/>
                 </div>
             </Provider>
         );
