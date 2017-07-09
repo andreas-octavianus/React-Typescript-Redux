@@ -20,4 +20,4 @@ export function mergeProps(stateProps: Object, dispatchProps: Object, ownProps: 
     return Object.assign({}, ownProps, stateProps, dispatchProps);
 }
 
-export default connect<any,any,any,any>(mapStateToProps, mapDispatchToProps, mergeProps)(Hello);
+export default connect<any, any, any, any>(mapStateToProps, mapDispatchToProps, mergeProps)(Hello);

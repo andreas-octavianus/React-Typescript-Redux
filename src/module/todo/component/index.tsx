@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Component} from 'react';
 import {Dispatch, connect} from 'react-redux';
 import {addTodo, AddTodo, TodoAction} from '../action';
-import {RouteComponentProps} from "react-router";
+import {RouteComponentProps} from 'react-router';
 
 interface Props {
     todos?: string[];

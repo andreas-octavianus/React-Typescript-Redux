@@ -26,11 +26,11 @@ class App extends React.Component<{}, {}> {
                         <p className="App-intro">
                             To get started, edit <code>src/App.tsx</code> and save to reload.
                         </p>
-                        <Link to={"/"}>Hello</Link>
+                        <Link to={'/'}>Hello</Link>
                         {' | '}
-                        <Link to={"/todo"}>Todo</Link>
+                        <Link to={'/todo'}>Todo</Link>
                         {' | '}
-                        <Link to={"/identity"}>Identity</Link>
+                        <Link to={'/identity'}>Identity</Link>
                         <Switch>
                             <Route exact={true} path="/" component={Hello}/>
                             <Route exact={true} path="/todo" component={TodoPage}/>
