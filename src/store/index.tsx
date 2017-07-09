@@ -1,12 +1,19 @@
-import {createStore, combineReducers} from 'redux';
+import {reducer} from 'redux-form';
+import {createStore, combineReducers, applyMiddleware} from 'redux';
+import {routerMiddleware, routerReducer} from 'react-router-redux';
+import {createBrowserHistory} from 'history';
 import {enthusiasm} from '../module/enthusiasm/reducer';
 import {todoReducer} from '../module/todo/reducer';
-import {reducer} from 'redux-form';
+
+export const history = createBrowserHistory();
+
+const middleware = routerMiddleware(history);
 
 export const appReducer = combineReducers({
     enthusiasm,
     todoReducer,
-    form: reducer
+    form: reducer,
+    router: routerReducer
 });
 
-export const store = createStore(appReducer);
+export const store = createStore(appReducer, applyMiddleware(middleware));
