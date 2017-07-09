@@ -10,7 +10,7 @@ export interface Props {
     onDecrement?: () => void;
 }
 
-export class Hello extends Component<Props & RouteComponentProps<any>, {}> {
+export class Hello extends Component<Props & RouteComponentProps<Hello>, {}> {
 
     getExclamationMarks(numChars: number) {
         return Array(numChars + 1).join('!');

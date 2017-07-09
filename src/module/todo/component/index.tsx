@@ -15,7 +15,7 @@ interface State {
 
 let inputText: HTMLInputElement | null;
 
-class Page extends Component<Props & RouteComponentProps<any>, State> {
+class Page extends Component<Props & RouteComponentProps<Page>, State> {
 
     onSubmit(event: React.FormEvent<any>) {
         event.preventDefault();

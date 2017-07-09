@@ -29,7 +29,7 @@ const warn = (values: Identity) => {
 
 class IdentityForm extends Component<
     IdentityFormProps &
-    FormProps<Identity, any, any>, IdentityFormState> {
+    FormProps<Identity, IdentityFormProps, IdentityFormState>, IdentityFormState> {
 
     renderForm({input, meta, placeholder}: any) {
         return (

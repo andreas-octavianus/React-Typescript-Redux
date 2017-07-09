@@ -12,7 +12,7 @@ interface State {
 
 }
 
-export class IdentityPage extends Component<Props & RouteComponentProps<any>, State> {
+export class IdentityPage extends Component<Props & RouteComponentProps<IdentityPage>, State> {
 
     render() {
         return (
