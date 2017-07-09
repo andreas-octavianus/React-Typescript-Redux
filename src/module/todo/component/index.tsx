@@ -2,6 +2,7 @@ import * as React from 'react';
 import {Component} from 'react';
 import {Dispatch, connect} from 'react-redux';
 import {addTodo, AddTodo, TodoAction} from '../action';
+import {RouteComponentProps} from "react-router";
 
 interface Props {
     todos?: string[];
@@ -14,7 +15,7 @@ interface State {
 
 let inputText: HTMLInputElement | null;
 
-class Page extends Component<Props, State> {
+class Page extends Component<Props & RouteComponentProps<any>, State> {
 
     onSubmit(event: React.FormEvent<any>) {
         event.preventDefault();
@@ -60,4 +61,4 @@ export function mergeProps(stateProps: Object, dispatchProps: Object, ownProps: 
     return Object.assign({}, stateProps, dispatchProps, ownProps);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps, mergeProps) (Page);
+export default connect<any, any, any, any>(mapStateToProps, mapDispatchToProps, mergeProps) (Page);

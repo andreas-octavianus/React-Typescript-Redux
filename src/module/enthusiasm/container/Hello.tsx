@@ -1,4 +1,4 @@
-import Hello from '../component/Hello';
+import {Hello} from '../component/Hello';
 import * as actions from '../action/';
 import {connect, Dispatch} from 'react-redux';
 
@@ -20,4 +20,4 @@ export function mergeProps(stateProps: Object, dispatchProps: Object, ownProps: 
     return Object.assign({}, ownProps, stateProps, dispatchProps);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(Hello);
+export default connect<any,any,any,any>(mapStateToProps, mapDispatchToProps, mergeProps)(Hello);

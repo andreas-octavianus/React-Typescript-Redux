@@ -1,5 +1,7 @@
 import * as React from 'react';
+import {Component} from 'react';
 import './Hello.css';
+import {RouteComponentProps} from 'react-router';
 
 export interface Props {
     name: string;
@@ -8,7 +10,7 @@ export interface Props {
     onDecrement?: () => void;
 }
 
-class Hello extends React.Component<Props, {}> {
+export class Hello extends Component<Props & RouteComponentProps<any>, {}> {
 
     getExclamationMarks(numChars: number) {
         return Array(numChars + 1).join('!');
@@ -33,5 +35,3 @@ class Hello extends React.Component<Props, {}> {
     }
 
 }
-
-export default Hello;
