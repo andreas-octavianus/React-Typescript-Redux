@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Component} from 'react';
-import {Field, FormErrors, FormProps, FormWarnings, reduxForm} from 'redux-form';
+import {Field, FormErrors, FormProps, FormWarnings, reduxForm, WrappedFieldProps} from 'redux-form';
 import {Identity} from '../type/Identity';
 
 interface IdentityFormProps {
@@ -31,10 +31,10 @@ class IdentityForm extends Component<
     IdentityFormProps &
     FormProps<Identity, IdentityFormProps, IdentityFormState>, IdentityFormState> {
 
-    renderForm({input, meta, placeholder}: any) {
+    renderForm({input, meta}: WrappedFieldProps<IdentityFormState>) {
         return (
             <div className="input-row">
-                <input type="text" {...input} placeholder={placeholder}/>
+                <input type="text" {...input}/>
                 <div>
                     {meta.touched && meta.error && <span className="error">{meta.error}</span>}
                     {meta.touched && meta.warning && <span className="warning">{meta.warning}</span>}
