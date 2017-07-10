@@ -1,23 +1,19 @@
 import {Hello} from '../component/Hello';
 import * as actions from '../action/';
-import {connect, Dispatch} from 'react-redux';
+import {connect} from 'react-redux';
 
-export function mapStateToProps(appState: any) {
+export function mapStateToProps(appState: any, ownProps: any) {
     return {
         enthusiasmLevel: appState.enthusiasm.enthusiasmLevel,
         name: appState.enthusiasm.languageName
     };
 }
 
-export function mapDispatchToProps(dispatch: Dispatch<actions.EnthusiasmAction>) {
+export function mapDispatchToProps(dispatch: any, ownProps: any) {
     return {
         onIncrement: () => dispatch(actions.incrementEnthusiasm()),
         onDecrement: () => dispatch(actions.decrementEnthusiasm())
     };
 }
 
-export function mergeProps(stateProps: Object, dispatchProps: Object, ownProps: Object) {
-    return Object.assign({}, ownProps, stateProps, dispatchProps);
-}
-
-export default connect<any, any, any, any>(mapStateToProps, mapDispatchToProps, mergeProps)(Hello);
+export default connect(mapStateToProps, mapDispatchToProps)(Hello);

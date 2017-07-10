@@ -1,4 +1,4 @@
-export interface StoreState {
+export interface HelloState {
     languageName: string;
     enthusiasmLevel: number;
 }

@@ -1,23 +1,26 @@
 import * as React from 'react';
 import {Component} from 'react';
 import './Hello.css';
-import {RouteComponentProps} from 'react-router';
 
-export interface Props {
+export interface HelloProps {
     name: string;
-    enthusiasmLevel?: number;
+    enthusiasmLevel: number;
     onIncrement?: () => void;
     onDecrement?: () => void;
 }
 
-export class Hello extends Component<Props & RouteComponentProps<any>, {}> {
+export interface HelloState {
+
+}
+
+export class Hello extends Component<HelloProps, HelloState> {
 
     getExclamationMarks(numChars: number) {
         return Array(numChars + 1).join('!');
     }
 
     render() {
-        const { name, enthusiasmLevel = 1, onIncrement, onDecrement } = this.props;
+        const { name, enthusiasmLevel, onIncrement, onDecrement } = this.props;
         if (enthusiasmLevel <= 0) {
             throw new Error('You could be a little more enthusiastic');
         }
